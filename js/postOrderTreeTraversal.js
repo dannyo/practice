@@ -12,20 +12,20 @@ var node2 = new Node(2, node1, node3);
 var node6 = new Node(6, node5, node7);
 var node4 = new Node(4, node2, node6);
 
-function inOrderRecursiveTreeTraversal(root){
+function postOrderRecursiveTreeTraversal(root){
     if(root === null) { return; }
-    inOrderRecursiveTreeTraversal(root.left);
+    postOrderRecursiveTreeTraversal(root.left);
+    postOrderRecursiveTreeTraversal(root.right);
     console.log(root.data);
-    inOrderRecursiveTreeTraversal(root.right);
 }
 
-inOrderRecursiveTreeTraversal(node4);
+postOrderRecursiveTreeTraversal(node4);
 
-function inOrderIterativeTreeTraversal(root){
+function postOrderIterativeTreeTraversal(root){
     var stack = [];
     var cur = root;
 
-    while(stack.length !== 0 || cur !== null){
+    while(stack.length !== 0){
         if (cur !== null)
         {
             stack.push(cur);
@@ -38,4 +38,4 @@ function inOrderIterativeTreeTraversal(root){
     }
 }
 
-inOrderIterativeTreeTraversal(node4);
+postOrderIterativeTreeTraversal(node4);
