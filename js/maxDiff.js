@@ -2,6 +2,7 @@
 // that larger element appears after the smaller number
 // The function should return -1 if there is no max diff
 
+//O(n)
 function maxDifference(arr) {
     var maxDiff = -1;
     if (arr.length < 2) { return maxDiff; }
